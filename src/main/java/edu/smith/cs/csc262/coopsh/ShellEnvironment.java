@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import edu.smith.cs.csc262.coopsh.apps.Cat;
+import edu.smith.cs.csc262.coopsh.apps.Echo;
 import edu.smith.cs.csc262.coopsh.apps.Pwd;
 import edu.smith.cs.csc262.coopsh.apps.WordCount;
 import edu.smith.cs.csc262.coopsh.text.ShellParser;
@@ -70,6 +71,8 @@ public class ShellEnvironment {
 				throw new IllegalArgumentException("More than one argument to cd!");
 			executeChangeDir(args[0]);
 			return null;
+		case "echo":
+			return new Echo(this, args);
 		// Agh!
 		default:
 			throw new RuntimeException("No such program: " + name);
