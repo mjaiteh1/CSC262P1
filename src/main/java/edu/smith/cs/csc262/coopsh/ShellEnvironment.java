@@ -9,7 +9,9 @@ import java.util.Map;
 
 import edu.smith.cs.csc262.coopsh.apps.Cat;
 import edu.smith.cs.csc262.coopsh.apps.Echo;
+import edu.smith.cs.csc262.coopsh.apps.ListFiles;
 import edu.smith.cs.csc262.coopsh.apps.Pwd;
+import edu.smith.cs.csc262.coopsh.apps.SetVar;
 import edu.smith.cs.csc262.coopsh.apps.WordCount;
 import edu.smith.cs.csc262.coopsh.text.ShellParser;
 import edu.smith.cs.csc262.coopsh.text.Token;
@@ -73,7 +75,12 @@ public class ShellEnvironment {
 			return null;
 		case "echo":
 			return new Echo(this, args);
+			
+		case "setVar": 
+			return new SetVar(this,args);
 		// Agh!
+		case "listFiles": 
+			return new ListFiles(this, args);
 		default:
 			throw new RuntimeException("No such program: " + name);
 		}

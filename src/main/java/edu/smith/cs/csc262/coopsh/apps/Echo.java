@@ -8,14 +8,18 @@ public class Echo extends Task {
 	public Echo(ShellEnvironment env, String[] args) {
 		super(env, args);
 	 
-			System.out.println(args);
+			//System.out.println(args);
 			
 	}
 
 	@Override
 	protected void update() {
-		// TODO Auto-generated method stub
-		
+		for (int i = 0; i < args.length; i++) { 
+			System.out.print(args[i] + " ");
+		}
+		System.out.println();
+		this.closeOutput();
+		this.exit(0);
 	}
 
 }
