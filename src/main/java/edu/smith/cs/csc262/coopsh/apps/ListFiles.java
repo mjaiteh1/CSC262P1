@@ -16,8 +16,12 @@ public class ListFiles extends Task{
 
 	@Override
 	protected void update() {
-		System.out.println(workingDir.getAbsolutePath());
-		this.println(workingDir.getAbsolutePath());
+		//System.out.println(workingDir.getAbsolutePath());
+		File folder = new File(workingDir.getAbsolutePath());
+        String[] files = folder.list();
+        for (String file : files) { 
+        	System.out.println(file);
+        }
 		this.closeOutput();
 		this.exit(0);
 	}

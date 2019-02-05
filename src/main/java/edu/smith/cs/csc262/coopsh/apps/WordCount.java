@@ -6,7 +6,8 @@ import edu.smith.cs.csc262.coopsh.Task;
 
 public class WordCount extends Task {
 	int wordCount = 0;
-
+    int lineCount = 0;
+    int byteCount = 0;
 	public WordCount(ShellEnvironment env, String[] args) {
 		super(env, args);
 	}
@@ -15,12 +16,14 @@ public class WordCount extends Task {
 	protected void update() {
 		InputLine line = this.input.poll();
 		if (line == null) {
-			// still waiting for more...
 			return;
 		}
 		
+		
 		// only output and print when we've seen the whole file!
 		if (line.isEndOfFile()) {
+			this.println(lineCount);
+            this.println(byteCount);
 			this.println(wordCount);
 			this.closeOutput();
 			this.exit(0);
@@ -28,7 +31,10 @@ public class WordCount extends Task {
 		}
 		
 		// Otherwise, increment this count!
-		wordCount += line.get().split("\\s+").length;		
+		wordCount += line.get().split("\\s+").length;	
+		lineCount += 1;
+		byteCount += line.get().getBytes().length;
+
 	}
 	
 }

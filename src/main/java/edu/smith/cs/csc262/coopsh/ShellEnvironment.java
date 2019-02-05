@@ -9,6 +9,7 @@ import java.util.Map;
 
 import edu.smith.cs.csc262.coopsh.apps.Cat;
 import edu.smith.cs.csc262.coopsh.apps.Echo;
+import edu.smith.cs.csc262.coopsh.apps.Grep;
 import edu.smith.cs.csc262.coopsh.apps.ListFiles;
 import edu.smith.cs.csc262.coopsh.apps.Pwd;
 import edu.smith.cs.csc262.coopsh.apps.SetVar;
@@ -81,6 +82,8 @@ public class ShellEnvironment {
 		// Agh!
 		case "listFiles": 
 			return new ListFiles(this, args);
+		case "grep":
+			return new Grep(this,args);
 		default:
 			throw new RuntimeException("No such program: " + name);
 		}
