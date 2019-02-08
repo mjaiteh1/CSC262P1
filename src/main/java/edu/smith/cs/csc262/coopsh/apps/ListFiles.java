@@ -20,7 +20,7 @@ public class ListFiles extends Task{
 		File folder = new File(workingDir.getAbsolutePath());
         String[] files = folder.list();
         for (String file : files) { 
-        	System.out.println(file);
+        	this.println(file);
         }
 		this.closeOutput();
 		this.exit(0);

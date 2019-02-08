@@ -10,9 +10,13 @@ import java.util.Map;
 import edu.smith.cs.csc262.coopsh.apps.Cat;
 import edu.smith.cs.csc262.coopsh.apps.Echo;
 import edu.smith.cs.csc262.coopsh.apps.Grep;
+import edu.smith.cs.csc262.coopsh.apps.Head;
 import edu.smith.cs.csc262.coopsh.apps.ListFiles;
 import edu.smith.cs.csc262.coopsh.apps.Pwd;
+import edu.smith.cs.csc262.coopsh.apps.RGrep;
 import edu.smith.cs.csc262.coopsh.apps.SetVar;
+import edu.smith.cs.csc262.coopsh.apps.Sort;
+import edu.smith.cs.csc262.coopsh.apps.Tail;
 import edu.smith.cs.csc262.coopsh.apps.WordCount;
 import edu.smith.cs.csc262.coopsh.text.ShellParser;
 import edu.smith.cs.csc262.coopsh.text.Token;
@@ -77,13 +81,21 @@ public class ShellEnvironment {
 		case "echo":
 			return new Echo(this, args);
 			
-		case "setVar": 
+		case "set": 
 			return new SetVar(this,args);
 		// Agh!
-		case "listFiles": 
+		case "ls": 
 			return new ListFiles(this, args);
 		case "grep":
 			return new Grep(this,args);
+		case "rgrep":
+			return new RGrep(this,args);
+		case "sort":
+			return new Sort(this,args);
+		case "head":
+			return new Head(this,args);
+		case "tail":
+			return new Tail(this,args);
 		default:
 			throw new RuntimeException("No such program: " + name);
 		}
