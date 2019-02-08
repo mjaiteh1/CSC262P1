@@ -1,6 +1,6 @@
 package edu.smith.cs.csc262.coopsh.apps;
 
-import edu.smith.cs.csc262.coopsh.InputLine;
+//import edu.smith.cs.csc262.coopsh.InputLine;
 import edu.smith.cs.csc262.coopsh.ShellEnvironment;
 import edu.smith.cs.csc262.coopsh.Task;
 
@@ -12,18 +12,15 @@ public class Sort extends Task {
 
 	@Override
 	protected void update() {
-		InputLine line = this.input.poll();
 		
-		if (line == null) {
-			return;
-		}
 		// only output and print when we've seen the whole file!
-		if (line.isEndOfFile()) {
-				
+		
+				System.out.println(env.getVariable("ec"));
 				this.closeOutput();
 				this.exit(0);
 				return;
-		}
+	
+		//System.out.println(line.get());
 		
 		
 
