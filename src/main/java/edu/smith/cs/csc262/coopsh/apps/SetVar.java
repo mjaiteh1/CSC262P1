@@ -15,8 +15,6 @@ public class SetVar extends Task {
 	protected void update() {
 	   
 	   env.setVariable(args[0],  args[1]);
-	 
-	   // print variables
 	   this.closeOutput();
 	   this.exit(0);
 	}

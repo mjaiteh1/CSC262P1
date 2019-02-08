@@ -1,9 +1,7 @@
 package edu.smith.cs.csc262.coopsh.apps;
 
 import edu.smith.cs.csc262.coopsh.Task;
-
 import java.util.ArrayList;
-
 import edu.smith.cs.csc262.coopsh.InputLine;
 import edu.smith.cs.csc262.coopsh.ShellEnvironment;
 

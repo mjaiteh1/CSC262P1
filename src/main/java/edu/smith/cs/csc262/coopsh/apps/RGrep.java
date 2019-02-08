@@ -37,8 +37,6 @@ public class RGrep extends Task{
 			this.println(line.get());
 		}
 		
-		
-		
 	}
 
 }

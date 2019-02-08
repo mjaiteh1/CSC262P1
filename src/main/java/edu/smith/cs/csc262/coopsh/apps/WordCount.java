@@ -19,7 +19,6 @@ public class WordCount extends Task {
 			return;
 		}
 		
-		
 		// only output and print when we've seen the whole file!
 		if (line.isEndOfFile()) {
 			this.println(lineCount);
