@@ -12,8 +12,10 @@ public class Echo extends Task {
 	
 	@Override
 	protected void update() {
-		
-		this.println(args[0]);
+		String[] lines = args[0].split("\n");
+		for (int i = 0; i < lines.length; i++) {
+			this.println(lines[i]);	
+		}
 		this.closeOutput();
 		this.exit(0);
 	}
